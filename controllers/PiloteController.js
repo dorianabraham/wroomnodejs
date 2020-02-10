@@ -95,7 +95,7 @@ module.exports.AfficherPilote = function(request, response) {
 
             function(callback){
 
-                model.getSponsorPilote( data,(function (errPil1, resultPil1) {callback(null, resultPil1) }));
+                model.getSponsorPilote( data,(function (errSpo, resultSpo) {callback(null, resultSpo) }));
             },
         ],
         function(err,result){
@@ -106,7 +106,7 @@ module.exports.AfficherPilote = function(request, response) {
             }
             response.listePilote = result[0];
             response.nomPilote = result[1];
-            response.infosPilote = result[2];
+            response.sponsorPilote = result[2];
             console.log(result[1]);
             console.log(result[2]);
 

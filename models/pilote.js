@@ -54,10 +54,7 @@ module.exports.getSponsorPilote = function (num,callback) {
         if(!err){
             // s'il n'y a pas d'erreur de connexion
             // execution de la requête SQL
-            let sql ="SELECT sponom, sposectactivite, piltexte FROM PILOTE p " +
-                "JOIN SPONSORISE sp ON p.pilnum = sp.pilnum " +
-                "JOIN SPONSOR s ON sp.sponum = s.sponum " +
-                "WHERE p.pilnum = '" +num +"'" ;
+            let sql ="SELECT sponom, sposectactivite FROM SPONSOR s JOIN sponsorise sp on s.SPONUM = sp.SPONUM WHERE sp.pilnum =" +num;
 
             console.log (sql);
             connexion.query(sql, callback);
@@ -67,3 +64,22 @@ module.exports.getSponsorPilote = function (num,callback) {
         }
     });
 };
+
+module.exports.getSponsorPilote = function (num,callback) {
+    // connection à la base
+    db.getConnection(function(err, connexion){
+        if(!err){
+            // s'il n'y a pas d'erreur de connexion
+            // execution de la requête SQL
+            let sql ="SELECT sponom, sposectactivite FROM SPONSOR s JOIN sponsorise sp on s.SPONUM = sp.SPONUM WHERE sp.pilnum =" +num;
+
+            console.log (sql);
+            connexion.query(sql, callback);
+
+            // la connexion retourne dans le pool
+            connexion.release();
+        }
+    });
+};
+
+
