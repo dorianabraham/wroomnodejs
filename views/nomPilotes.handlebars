@@ -1,0 +1,12 @@
+{{>repoPilotesPartial}}
+
+<div class = "listeDesPilotes">
+    {{#each nomPilote}}
+        <div>
+            <a href="/detailsPilote/{{this.idPilote}}"> <img id="imgPilote" src="/image/pilote/{{this.phoadresse}}"> </a> <br>
+            <p>{{this.prenom}} {{this.nom}}</p>
+        </div>
+    {{/each}}
+
+</div>
+<br class="myboth" />

@@ -1,0 +1,14 @@
+{{>repoPilotesPartial}}
+
+<div class = "afficherPilote">
+    {{#each infosPilote}}
+        <div>
+            <p>{{this.sponom}} ({{this.sposectactivite}})</p>
+        </div>
+    {{/each}}
+        <div>
+            <p>Qui suis-je ? : {{infosPilote.0.piltexte}}</p>
+        </div>
+
+</div>
+<br class="myboth" />

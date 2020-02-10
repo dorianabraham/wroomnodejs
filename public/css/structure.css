@@ -64,3 +64,16 @@
    max-height: 40%;
    max-width: 40%;
 }
+
+ .listeDesPilotes{
+	 display: flex;
+	 justify-content: space-around;
+	 text-align: center;
+
+ }
+
+ #imgPilote {
+	 width: 140px;
+	 height: 150px;
+
+ }
